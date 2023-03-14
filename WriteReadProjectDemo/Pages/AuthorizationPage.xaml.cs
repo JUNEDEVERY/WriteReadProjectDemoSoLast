@@ -107,18 +107,9 @@ namespace WriteReadProjectDemo
                             {
                                 if (user.UserPassword == tbPassword.Text)
                                 {
-                                    if (user.UserRole == 1) // админ
-                                    {
-                                        NavigationService.Navigate(new PageProducts(user));
-                                    }
-                                    else if (user.UserRole == 2) // менеджер
-                                    {
 
-                                    }
-                                    else if (user.UserRole == 3) // клиент
-                                    {
-                                        NavigationService.Navigate(new PageProducts(user));
-                                    }
+                                    NavigationService.Navigate(new PageProducts(user));
+                                  
                                 }
                                 else
                                 {
@@ -151,6 +142,17 @@ namespace WriteReadProjectDemo
         private void goGuest_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new PageProducts());
+        }
+
+        private void btnAuth_Loaded(object sender, RoutedEventArgs e)
+        {
+            btnAuth.Background = (SolidColorBrush)new SolidColorBrush(Color.FromRgb(73, 140, 81));
+            goGuest.Background = (SolidColorBrush)new SolidColorBrush(Color.FromRgb(73, 140, 81));
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+           // Background = (SolidColorBrush)new SolidColorBrush(Color.FromRgb(118, 227, 131));
         }
     }
 }

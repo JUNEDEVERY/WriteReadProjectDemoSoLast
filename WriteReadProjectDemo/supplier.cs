@@ -29,7 +29,7 @@ public partial class supplier
 
     public int idSupplier { get; set; }
 
-    public string supplier1 { get; set; }
+    public string supplierName { get; set; }
 
 
 

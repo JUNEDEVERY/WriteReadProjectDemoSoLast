@@ -39,7 +39,7 @@ public partial class Product
 
     public decimal ProductCost { get; set; }
 
-    public Nullable<byte> ProductDiscountAmount { get; set; }
+    public int ProductDiscountAmount { get; set; }
 
     public int ProductQuantityInStock { get; set; }
 

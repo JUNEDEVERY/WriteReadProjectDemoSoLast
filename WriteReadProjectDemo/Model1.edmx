@@ -10,7 +10,7 @@
             <PropertyRef Name="idEdIzm" />
           </Key>
           <Property Name="idEdIzm" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="edizm" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="edenicaizm" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="manufacture">
           <Key>
@@ -60,7 +60,7 @@
           <Property Name="ProductCategory" Type="int" Nullable="false" />
           <Property Name="ProductManufacturer" Type="int" Nullable="false" />
           <Property Name="ProductCost" Type="decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="ProductDiscountAmount" Type="tinyint" />
+          <Property Name="ProductDiscountAmount" Type="int" Nullable="false" />
           <Property Name="ProductQuantityInStock" Type="int" Nullable="false" />
           <Property Name="ProductStatus" Type="int" />
           <Property Name="idEdIzm" Type="int" Nullable="false" />
@@ -73,7 +73,7 @@
             <PropertyRef Name="ProductCategoryID" />
           </Key>
           <Property Name="ProductCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ProductCategory" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProductCategoryName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -94,7 +94,7 @@
             <PropertyRef Name="idSupplier" />
           </Key>
           <Property Name="idSupplier" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="supplier" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="supplierName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -343,7 +343,7 @@
             <PropertyRef Name="idEdIzm" />
           </Key>
           <Property Name="idEdIzm" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="edizm1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="edenicaizm" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Product" Relationship="practic3Model.FK_Product_edIzm" FromRole="edIzm" ToRole="Product" />
         </EntityType>
         <EntityType Name="manufacture">
@@ -402,7 +402,7 @@
           <Property Name="ProductCategory" Type="Int32" Nullable="false" />
           <Property Name="ProductManufacturer" Type="Int32" Nullable="false" />
           <Property Name="ProductCost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="ProductDiscountAmount" Type="Byte" />
+          <Property Name="ProductDiscountAmount" Type="Int32" Nullable="false" />
           <Property Name="ProductQuantityInStock" Type="Int32" Nullable="false" />
           <Property Name="ProductStatus" Type="Int32" />
           <Property Name="idEdIzm" Type="Int32" Nullable="false" />
@@ -420,7 +420,7 @@
             <PropertyRef Name="ProductCategoryID" />
           </Key>
           <Property Name="ProductCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProductCategory1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductCategoryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Product" Relationship="practic3Model.FK_Product_ProductCategory" FromRole="ProductCategory" ToRole="Product" />
         </EntityType>
         <EntityType Name="Role">
@@ -444,7 +444,7 @@
             <PropertyRef Name="idSupplier" />
           </Key>
           <Property Name="idSupplier" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="supplier1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="supplierName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Product" Relationship="practic3Model.FK_Product_supplier" FromRole="supplier" ToRole="Product" />
         </EntityType>
         <EntityType Name="User">
@@ -590,7 +590,7 @@
           <EntitySetMapping Name="edIzm">
             <EntityTypeMapping TypeName="practic3Model.edIzm">
               <MappingFragment StoreEntitySet="edIzm">
-                <ScalarProperty Name="edizm1" ColumnName="edizm" />
+                <ScalarProperty Name="edenicaizm" ColumnName="edenicaizm" />
                 <ScalarProperty Name="idEdIzm" ColumnName="idEdIzm" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -658,7 +658,7 @@
           <EntitySetMapping Name="ProductCategory">
             <EntityTypeMapping TypeName="practic3Model.ProductCategory">
               <MappingFragment StoreEntitySet="ProductCategory">
-                <ScalarProperty Name="ProductCategory1" ColumnName="ProductCategory" />
+                <ScalarProperty Name="ProductCategoryName" ColumnName="ProductCategoryName" />
                 <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -682,7 +682,7 @@
           <EntitySetMapping Name="supplier">
             <EntityTypeMapping TypeName="practic3Model.supplier">
               <MappingFragment StoreEntitySet="supplier">
-                <ScalarProperty Name="supplier1" ColumnName="supplier" />
+                <ScalarProperty Name="supplierName" ColumnName="supplierName" />
                 <ScalarProperty Name="idSupplier" ColumnName="idSupplier" />
               </MappingFragment>
             </EntityTypeMapping>

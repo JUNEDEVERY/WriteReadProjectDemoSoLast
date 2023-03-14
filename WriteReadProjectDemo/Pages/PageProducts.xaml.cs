@@ -26,6 +26,7 @@ namespace WriteReadProjectDemo
         public static bool isGuest;
       
         Product product1 = new Product();
+
         public PageProducts(User user)
         {
             InitializeComponent();
@@ -38,6 +39,20 @@ namespace WriteReadProjectDemo
             tbNameUser.Text = user.FullName;
             isGuest = false;
 
+            if (user.UserRole == 3)
+            {
+                btnAllOrder.Visibility = Visibility.Collapsed;
+                btnAddProduct.Visibility = Visibility.Collapsed;
+                
+
+            }
+            else if (user.UserRole == 2)
+            {
+                btnAllOrder.Visibility = Visibility.Visible;
+                btnAddProduct.Visibility = Visibility.Collapsed;
+            }
+          
+
         }
         public PageProducts() // для гостя
         {
@@ -49,6 +64,15 @@ namespace WriteReadProjectDemo
             tblast.Text = db.tbe.Product.Count().ToString();
             tbNameUser.Text = "Гость";
             isGuest = true;
+
+            if (user == null)
+            {
+                btnAllOrder.Visibility = Visibility.Collapsed;
+                btnAddProduct.Visibility = Visibility.Collapsed;
+                
+
+            }
+           
 
         }
         private void cmbSorted_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -63,12 +87,8 @@ namespace WriteReadProjectDemo
 
         private void lvProduct_Loaded(object sender, RoutedEventArgs e)
         {
-            //List<Product> product = db.tbe.Product.Where(x => x.ProductDiscountAmount > 15).ToList();
-            //if (product1.ProductDiscountAmount > 15)
-            //{
-            //    SolidColorBrush solidColorBrush = new SolidColorBrush(Color.FromRgb(127, 255, 0));
-            //    return solidColorBrush;
-            //}
+            
+
         }
         private void filtresMethod()
         {
@@ -216,6 +236,7 @@ namespace WriteReadProjectDemo
 
         private void btnDeleteOrder_Click(object sender, RoutedEventArgs e)
         {
+          
             Button button = (Button)sender;
             string id = button.Uid;
             Product product = db.tbe.Product.FirstOrDefault(x => x.ProductArticleNumber == id);
@@ -240,6 +261,49 @@ namespace WriteReadProjectDemo
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new EditedOrder());
+        }
+
+        private void btnAddProduct_Click(object sender, RoutedEventArgs e)
+        {
+            AddProductAdmin addProduct = new AddProductAdmin();
+            addProduct.Show();
+        }
+
+        private void btnDeleteProduct_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Button btnDeleteProduct = sender as Button;
+                Button btnChangeProduct = sender as Button;
+                if (user == null)
+                {
+                  
+                    
+                    btnDeleteProduct.Visibility = Visibility.Collapsed;
+                    btnChangeProduct.Visibility = Visibility.Collapsed;
+
+
+
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void btnAllOrder_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+
+            NavigationService.Navigate(new AuthorizationPage());
         }
     }
 }

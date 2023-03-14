@@ -29,7 +29,7 @@ public partial class ProductCategory
 
     public int ProductCategoryID { get; set; }
 
-    public string ProductCategory1 { get; set; }
+    public string ProductCategoryName { get; set; }
 
 
 

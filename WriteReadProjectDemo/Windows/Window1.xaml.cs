@@ -107,6 +107,10 @@ namespace WriteReadProjectDemo
                 {
                     order.OrderClientsId = user.UserID;
                 }
+                else
+                {
+                   
+                }
 
                 order.Code = codeRND;
                 order.OrderDate = DateTime.Now;
@@ -141,7 +145,7 @@ namespace WriteReadProjectDemo
                 db.tbe.SaveChanges();
 
                 PageProducts.articleProducts.Clear();
-                var ok = MessageBox.Show("Ваш заказ сформиован. Вам доступен талон для получения заказа. ", "Системное сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
+                var ok = MessageBox.Show("Ваш заказ сформирован. Вам доступен талон для получения заказа. ", "Системное сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
 
 
                 // формирование состава заказа

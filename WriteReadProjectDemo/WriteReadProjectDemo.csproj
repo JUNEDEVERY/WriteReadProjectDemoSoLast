@@ -90,24 +90,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddProductAdmin.xaml.cs">
+    <Compile Include="Windows\AddProductAdmin.xaml.cs">
       <DependentUpon>AddProductAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Article.cs" />
-    <Compile Include="AuthorizationPage.xaml.cs">
+    <Compile Include="Classes\Article.cs" />
+    <Compile Include="Pages\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Captcha.xaml.cs">
+    <Compile Include="Windows\Captcha.xaml.cs">
       <DependentUpon>Captcha.xaml</DependentUpon>
     </Compile>
-    <Compile Include="db.cs" />
-    <Compile Include="EditedOrder.xaml.cs">
+    <Compile Include="Classes\db.cs" />
+    <Compile Include="Pages\EditedOrder.xaml.cs">
       <DependentUpon>EditedOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="edIzm.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Frame.cs" />
+    <Compile Include="Classes\Frame.cs" />
     <Compile Include="manufacture.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -122,16 +122,16 @@
     <Compile Include="OrderProduct.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="PadeOrder.xaml.cs">
+    <Compile Include="Pages\PadeOrder.xaml.cs">
       <DependentUpon>PadeOrder.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageProducts.xaml.cs">
+    <Compile Include="Pages\PageProducts.xaml.cs">
       <DependentUpon>PageProducts.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PartialEditedOrder.cs" />
-    <Compile Include="PartialPoint.cs" />
-    <Compile Include="PartialProduct.cs" />
-    <Compile Include="PartialUsers.cs" />
+    <Compile Include="Classes\PartialEditedOrder.cs" />
+    <Compile Include="Classes\PartialPoint.cs" />
+    <Compile Include="Classes\PartialProduct.cs" />
+    <Compile Include="Classes\PartialUsers.cs" />
     <Compile Include="Point.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -147,35 +147,35 @@
     <Compile Include="statusChange.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="SummClass.cs" />
+    <Compile Include="Classes\SummClass.cs" />
     <Compile Include="supplier.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Window1.xaml.cs">
+    <Compile Include="Windows\Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowChangeOrder.xaml.cs">
+    <Compile Include="Windows\WindowChangeOrder.xaml.cs">
       <DependentUpon>WindowChangeOrder.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowChangeOrderADM.xaml.cs">
+    <Compile Include="Windows\WindowChangeOrderADM.xaml.cs">
       <DependentUpon>WindowChangeOrderADM.xaml</DependentUpon>
     </Compile>
-    <Page Include="AddProductAdmin.xaml">
+    <Page Include="Windows\AddProductAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AuthorizationPage.xaml">
+    <Page Include="Pages\AuthorizationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Captcha.xaml">
+    <Page Include="Windows\Captcha.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditedOrder.xaml">
+    <Page Include="Pages\EditedOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -191,23 +191,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PadeOrder.xaml">
+    <Page Include="Pages\PadeOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PageProducts.xaml">
+    <Page Include="Pages\PageProducts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window1.xaml">
+    <Page Include="Windows\Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WindowChangeOrder.xaml">
+    <Page Include="Windows\WindowChangeOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WindowChangeOrderADM.xaml">
+    <Page Include="Windows\WindowChangeOrderADM.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -284,8 +284,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

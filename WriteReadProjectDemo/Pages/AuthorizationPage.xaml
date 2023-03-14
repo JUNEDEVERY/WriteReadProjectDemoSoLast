@@ -9,7 +9,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AuthorizationPage">
 
-    <Grid>
+    <Grid Loaded="Grid_Loaded">
       
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -23,17 +23,17 @@
 
             <StackPanel Grid.Row="1" HorizontalAlignment="Center" >
                 <GroupBox Name="gpLogin" Margin="0 35 0 0" Header="Введите логин">
-                <TextBox MaxLength="15" Name="tbLogin" Text="loginDEjrm2018"/>
+                <TextBox MaxLength="15" Name="tbLogin" Text="loginDEpxl2018"/>
                 </GroupBox>
             <GroupBox Name="gpPassword" Margin="0 35 0 0" Header="Введите пароль">
-                <TextBox MaxLength="15" Name="tbPassword" Text="Cpb+Im"/>
+                <TextBox MaxLength="15" Name="tbPassword" Text="P6h4Jq"/>
                 </GroupBox>
             <TextBlock Name="tbAuth" ></TextBlock>
             </StackPanel>
 
             <StackPanel Grid.Row="2" Orientation="Horizontal"  HorizontalAlignment="Center">
-                <Button Click="btnAuth_Click" Name="btnAuth" Content="Авторизоваться"/>
-                <Button Margin="15 0 0 0" Name="goGuest" Content="Войти как гость" Click="goGuest_Click"/>
+            <Button Click="btnAuth_Click" Name="btnAuth" Content="Авторизоваться" Loaded="btnAuth_Loaded"/> 
+            <Button Margin="15 0 0 0" Name="goGuest" Content="Войти как гость" Click="goGuest_Click"  Loaded="btnAuth_Loaded"/>
 
             </StackPanel>
     

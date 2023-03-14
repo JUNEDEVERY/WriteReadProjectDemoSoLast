@@ -29,7 +29,7 @@ public partial class edIzm
 
     public int idEdIzm { get; set; }
 
-    public string edizm1 { get; set; }
+    public string edenicaizm { get; set; }
 
 
 
