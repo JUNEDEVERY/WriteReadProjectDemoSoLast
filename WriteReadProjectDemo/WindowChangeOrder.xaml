@@ -1,0 +1,38 @@
+﻿<Window x:Class="WriteReadProjectDemo.WindowChangeOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WriteReadProjectDemo"
+        mc:Ignorable="d"
+        Title="WindowChangeOrder" Height="450" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1">
+            <GroupBox Header="Изменить статус заказа">
+                <ComboBox Name="cmbStatus" SelectionChanged="cmbStatus_SelectionChanged"></ComboBox>
+            </GroupBox>
+            <GroupBox Header="Изменить дату доставки">
+                <DatePicker Name="dpDeliveryDate"></DatePicker>
+            </GroupBox>
+            <GroupBox Header="Изменить дату оформления заказа">
+                <DatePicker Name="dpOrderDate"></DatePicker>
+            </GroupBox>
+            <GroupBox Header="Изменить пункт выдачи">
+                <ComboBox Name="cmbChangeOrderPoing" SelectionChanged="changeOrderPoint_SelectionChanged"></ComboBox>
+            </GroupBox>
+
+            <GroupBox Header="Изменить получателя">
+                <ComboBox Name="cmbChangeClient" SelectionChanged="changeOrderPoint_SelectionChanged"></ComboBox>
+            </GroupBox>
+            <GroupBox Header="Изменить код получения">
+                <TextBox Name="tbCode" MaxLength="3"></TextBox>
+            </GroupBox>
+            <Button HorizontalAlignment="Center" Name="changeOrder" Content="Изменить" Click="changeOrder_Click"></Button>
+        </StackPanel> 
+    </Grid>
+</Window>

@@ -1,0 +1,53 @@
+﻿<Window x:Class="WriteReadProjectDemo.AddProductAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WriteReadProjectDemo"
+        mc:Ignorable="d"
+        Title="AddProductAdmin" Height="850" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1">
+            <GroupBox Header="Введите артикул товара">
+                <TextBox Name="tbArcticle" MaxLength="7"></TextBox>
+            </GroupBox>
+            <GroupBox Header="Введите наименование товара">
+                <TextBox Name="tbNameProduct"></TextBox>
+            </GroupBox>
+            <GroupBox Header="Введите описание товара">
+                <TextBox Name="tbDescriptionProduct" TextWrapping="Wrap" Height="50"></TextBox>
+            </GroupBox>
+            <GroupBox Header="Выберите категорию добавляемого товара">
+                <ComboBox Name="cmbCategory"></ComboBox>
+            </GroupBox>
+            <GroupBox Header="Выберите производителя">
+                <ComboBox Name="cmbManufacturer"></ComboBox>
+            </GroupBox>
+            <GroupBox Header="Укажите цену товара">
+                <TextBox Name="tbCost"></TextBox>
+            </GroupBox>
+            <GroupBox Header="Укажите скидку товара  (%)">
+                <TextBox Name="tbSale"></TextBox>
+            </GroupBox>
+            <GroupBox Header="Укажите количество товара на складе (запас)">
+                <TextBox Name="tbQuantity"></TextBox>
+            </GroupBox>
+            <GroupBox Header="Укажите единицу измерения">
+                <ComboBox Name="cmbEdIzm"></ComboBox>
+            </GroupBox>
+            <GroupBox Header="Укажите максимальную скидку (%)">
+                <TextBox Name="tbMaxDiscount"></TextBox>
+            </GroupBox>
+            <GroupBox Header="Укажите поставщика">
+                <ComboBox Name="cmbSupplier"></ComboBox>
+            </GroupBox>
+            <Button Height="50" Content="Добавить" Name="addProduct" Click="addProduct_Click"></Button>
+        </StackPanel>
+    </Grid>
+   
+</Window>
