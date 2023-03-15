@@ -5,12 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WriteReadProjectDemo"
         mc:Ignorable="d"
-        Title="Captcha" Height="250" Width="450">
+          Background="#76e383"
+             ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="Прохождение аутентификации" Height="250" Width="450">
     <Grid>
         <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
             <Image Name="CaptchaImage" Height="100" Width="150"></Image>
             <TextBox BorderBrush="Black" Name="tbCheckedCaptcha"></TextBox>
-            <Button Content="Проверить" Click="Button_Click"></Button>
+            <Button Background="#498c51" Content="Проверить" Click="Button_Click"></Button>
         </StackPanel>
     </Grid>
 </Window>

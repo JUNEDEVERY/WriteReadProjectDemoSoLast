@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WriteReadProjectDemo"
       mc:Ignorable="d" 
-      Background="White"
+      Background="#76e383"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EditedOrder">
 
@@ -15,7 +15,7 @@
             <RowDefinition Height="5*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Text="Работа с заказми" Style="{StaticResource tbStyleFont}" Grid.Row="0" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="Работа с заказми" Style="{StaticResource tbStyleFont}" Grid.Row="0" HorizontalAlignment="Center" FontSize="36"></TextBlock>
         <StackPanel Grid.Row="1">
 
 
@@ -32,26 +32,26 @@
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="0*"></ColumnDefinition>
-                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="3*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Border x:Name="border" Loaded="border_Loaded" Uid="{Binding order.OrderID}" BorderThickness="4" CornerRadius="2">
+                                <Border x:Name="border" Loaded="border_Loaded" Uid="{Binding order.OrderID}" BorderThickness="3" CornerRadius="2">
                                     <StackPanel Width="710" HorizontalAlignment="Center">
                                         <StackPanel Grid.Row="0" Grid.Column="0">
                                             <StackPanel >
-                                                <TextBlock Text="{Binding order.OrderID}"></TextBlock>
-                                                <TextBlock TextWrapping="Wrap" Name="tbSostavZakaza" Uid="{Binding order.OrderID}" Loaded="tbSostavZakaza_Loaded_1"></TextBlock>
+                                                <TextBlock   FontFamily="Comic Sans MS" Text="{Binding order.OrderID, StringFormat={}Номер заказа > {0:}}"></TextBlock>
+                                                <TextBlock   FontFamily="Comic Sans MS" TextWrapping="Wrap" Name="tbSostavZakaza" Uid="{Binding order.OrderID}" Loaded="tbSostavZakaza_Loaded_1"></TextBlock>
                                             </StackPanel>
                                             <StackPanel>
-                                                <TextBlock Text="{Binding order.OrderDate,  StringFormat={}{0:dd MMMM yyyy}, ConverterCulture=ru}"></TextBlock>
-                                                <TextBlock Text="{Binding order.OrderDeliveryDate, StringFormat={}{0:dd MMMM yyyy}, ConverterCulture=ru}"></TextBlock>
+                                                <TextBlock   FontFamily="Comic Sans MS" Text="{Binding order.OrderDate,  StringFormat={}Дата заказа > {0:dd MMMM yyyy}, ConverterCulture=ru}"></TextBlock>
+                                                <TextBlock   FontFamily="Comic Sans MS" Text="{Binding order.OrderDeliveryDate, StringFormat={}Дата выдачи заказа >  {0:dd MMMM yyyy}, ConverterCulture=ru}"></TextBlock>
                                             </StackPanel>
                                         </StackPanel>
-                                        <TextBlock Name="tbSummZakaza" Uid="{Binding order.OrderID}" Loaded="tbSummZakaza_Loaded"></TextBlock>
-                                        <TextBlock Name="tbAllSale" Uid="{Binding order.OrderID}" Loaded="tbAllSale_Loaded"></TextBlock>
-                                        <TextBlock Text="{Binding order.User.UserSurname}"></TextBlock>
+                                        <TextBlock   FontFamily="Comic Sans MS" Name="tbSummZakaza" Uid="{Binding order.OrderID}" Loaded="tbSummZakaza_Loaded"></TextBlock>
+                                        <TextBlock   FontFamily="Comic Sans MS" Name="tbAllSale" Uid="{Binding order.OrderID}" Loaded="tbAllSale_Loaded"></TextBlock>
+                                        <TextBlock   FontFamily="Comic Sans MS" Text="{Binding order.User.UserSurname, StringFormat={}Фамилия клиента > {0:}}"></TextBlock>
                                         <StackPanel Grid.Column="1" Orientation="Horizontal" >
-                                            <Button Name="btnChangeOrder" Content="Изменить детали заказа" Uid="{Binding order.OrderID}" Click="btnChangeOrder_Click"></Button>
-                                            <Button Name="btnChange" Content="Изменить заказ" Uid="{Binding order.OrderID}" Click="btnChange_Click"></Button>
+                                            <Button   FontFamily="Comic Sans MS"   Background="#498c51" Name="btnChangeOrder" Content="Изменить детали заказа" Uid="{Binding order.OrderID}" Click="btnChangeOrder_Click"></Button>
+                                            <Button  Margin="15 0 0 0" FontFamily="Comic Sans MS"   Background="#498c51" Name="btnChange" Content="Изменить заказ" Uid="{Binding order.OrderID}" Click="btnChange_Click"></Button>
 
                                         </StackPanel>
                                     
@@ -74,30 +74,30 @@
 
 
             <StackPanel HorizontalAlignment="Left" Height="50" Margin="25 25 0 0" Grid.Row="1">
-                <Button Content="Назад" Name="btnBack" Click="btnBack_Click"/>
+                <Button FontFamily="Comic Sans MS" Background="#498c51" Content="Назад" Name="btnBack" Click="btnBack_Click"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center"  Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Height="50">
-                <GroupBox Header="Сортировка заказа по стоимости">
-                    <ComboBox Name="cmbSorted" SelectionChanged="cmbSorted_SelectionChanged">
-                        <ComboBoxItem>По умолчанию</ComboBoxItem>
-                        <ComboBoxItem>По возрастанию</ComboBoxItem>
-                        <ComboBoxItem>По убыванию</ComboBoxItem>
+                <GroupBox FontFamily="Comic Sans MS"  Header="Сортировка заказа по стоимости">
+                    <ComboBox FontFamily="Comic Sans MS"  Name="cmbSorted" SelectionChanged="cmbSorted_SelectionChanged">
+                        <ComboBoxItem FontFamily="Comic Sans MS" >По умолчанию</ComboBoxItem>
+                        <ComboBoxItem FontFamily="Comic Sans MS" >По возрастанию</ComboBoxItem>
+                        <ComboBoxItem FontFamily="Comic Sans MS" >По убыванию</ComboBoxItem>
                     </ComboBox>
 
 
 
                 </GroupBox>
                 <GroupBox Header="Фильтрация заказа по скидке">
-                    <ComboBox Name="cmbFiltres" SelectionChanged="cmbSorted_SelectionChanged">
-                        <ComboBoxItem Content="Все диапазоны"/>
-                        <ComboBoxItem Content="0-10%"/>
-                        <ComboBoxItem Content="11-14%"/>
-                        <ComboBoxItem Content="15% и более"/>
+                    <ComboBox FontFamily="Comic Sans MS"  Name="cmbFiltres" SelectionChanged="cmbSorted_SelectionChanged">
+                        <ComboBoxItem FontFamily="Comic Sans MS" >Все диапазоны</ComboBoxItem>
+                        <ComboBoxItem FontFamily="Comic Sans MS">0-10%</ComboBoxItem>
+                        <ComboBoxItem FontFamily="Comic Sans MS">11-14%</ComboBoxItem>
+                        <ComboBoxItem FontFamily="Comic Sans MS">15% и более</ComboBoxItem>
                     </ComboBox>
                 </GroupBox>
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Height="50" Margin="0 25 25 0" Grid.Row="1">
-                <Button Content="Сброс фильтров" Name="btnOutFiltres" Click="btnOutFiltres_Click"/>
+                <Button FontFamily="Comic Sans MS"  Background="#498c51" Content="Сброс фильтров" Name="btnOutFiltres" Click="btnOutFiltres_Click"/>
             </StackPanel>
         </Grid>
 

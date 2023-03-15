@@ -5,18 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WriteReadProjectDemo"
         mc:Ignorable="d"
+        Background="#76e383"
         ResizeMode="NoResize"
         Icon="\resources\icon.ico"
         Title="ООО «Пиши-стирай»  - магазин по продаже канцелярских товаров" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
        
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" HorizontalAlignment="Center" Orientation="Horizontal">
             <Image Name="imgLogo" Source="\resources\logo.png" Height="60"></Image>
-            <TextBlock Margin="0 15 0 0" Style="{StaticResource tbStyleFont}" Text="Пиши - стирай"></TextBlock>
+            <TextBlock Margin="0 25 0 0" Style="{StaticResource tbStyleFont}" Text="Пиши - стирай"></TextBlock>
         </StackPanel>
 
         <Frame Name="fMain" NavigationUIVisibility="Hidden" Grid.Row="1">

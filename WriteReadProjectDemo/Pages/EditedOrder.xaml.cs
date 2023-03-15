@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,13 +27,33 @@ namespace WriteReadProjectDemo
         List<Product> ORDERZ = new List<Product>();
         public static List<string> orders = new List<string>();
         List<SummClass> order = new List<SummClass>();
-
+        List<SaleClass> s = new List<SaleClass>();
         public EditedOrder()
         {
             InitializeComponent();
             lvOrderEdited.ItemsSource = db.tbe.Order.ToList();
 
+         
+            double summa1 = 0;
+            double summa2 = 0;
+            double procent = 0;
+            foreach (var item in db.tbe.Order)
+            {
+                SaleClass s1 = new SaleClass();
+                foreach (var item1 in db.tbe.OrderProduct.Where(x => x.OrderID == item.OrderID).ToList())
+                {
 
+                    summa1 += (int)item1.Product.ProductCost * item1.Count; // просто цена
+
+                    summa2 += (int)(item1.Product.ProductCost - (item1.Product.ProductCost * item1.Product.ProductDiscountAmount / 100)) * item1.Count; // с учетом скидки
+
+
+                }
+                procent = (summa1 - summa2) / (summa1 / 100);
+                s1.Sale = procent;
+                s.Add(s1);
+
+            }
 
             foreach (var item in db.tbe.Order)
             {
@@ -91,7 +112,7 @@ namespace WriteReadProjectDemo
             {
                 SolidColorBrush scb = (SolidColorBrush)new BrushConverter().ConvertFromString("#20b2aa");
                 border.BorderBrush = scb;
-                
+
             }
             else
             {
@@ -116,7 +137,7 @@ namespace WriteReadProjectDemo
 
 
             }
-            textBlock.Text = nameOrderProduct;
+            textBlock.Text = "Состав заказа >  " + nameOrderProduct;
 
         }
 
@@ -137,7 +158,7 @@ namespace WriteReadProjectDemo
 
             }
             //orderFIltresSumm = summa;
-            textBlock.Text = Convert.ToString(summa);
+            textBlock.Text = "Сумма заказа > " + Convert.ToString(summa);
         }
 
         public static List<int> orderFIltresSumm;
@@ -161,7 +182,7 @@ namespace WriteReadProjectDemo
 
                 }
                 procent = (summa - summa1) / (summa / 100);
-                textBlock.Text = summa1.ToString() + $"({procent} %) ";
+                textBlock.Text = "Сумма с учетом скидки > " + summa1.ToString() + $"({procent} %) ";
             }
             else
             {
@@ -169,7 +190,7 @@ namespace WriteReadProjectDemo
             }
         }
 
-      
+
 
 
         private void btnChangeOrder_Click(object sender, RoutedEventArgs e)
@@ -212,37 +233,80 @@ namespace WriteReadProjectDemo
 
             }
 
+            List<SaleClass> s = new List<SaleClass>();
+            double summa1 = 0;
+            double summa2 = 0;
+            double procent = 0;
+            foreach (var item in db.tbe.Order)
+            {
+                SaleClass s1 = new SaleClass();
+                foreach (var item1 in db.tbe.OrderProduct.Where(x => x.OrderID == item.OrderID).ToList())
+                {
+
+                    summa1 += (int)item1.Product.ProductCost * item1.Count; // просто цена
+
+                    summa2 += (int)(item1.Product.ProductCost - (item1.Product.ProductCost * item1.Product.ProductDiscountAmount / 100)) * item1.Count; // с учетом скидки
+
+                   
+                }
+                procent = (summa1 - summa2) / (summa1 / 100);
+                s1.Sale = procent;
+                s.Add(s1);
+
+            }
+
 
 
             //orderFIltresSumm
             if (cmbFiltres != null)
             {
-
-            }
-            if (cmbSorted != null)
-            {
-                if (cmbSorted.SelectedValue != null)
+                if (cmbFiltres.SelectedValue != null)
                 {
-                    ComboBoxItem cmb = (ComboBoxItem)cmbSorted.SelectedItem;
-                    switch (cmb.Content)
+                    ComboBoxItem cmb1 = (ComboBoxItem)cmbFiltres.SelectedItem;
+                    switch (cmb1.Content)
                     {
-                        case "По возрастанию":
+                        case "0-10%":
                             {
-                                order = order.OrderBy(x => x.Summa).ToList();
+                                s = s.Where(x => x.Sale >= 0 && x.Sale < 10).ToList();
                                 break;
                             }
-                        case "По убыванию":
+                        case "11-14%":
                             {
-                                order = order.OrderByDescending(x => x.Summa).ToList();
-
+                                s = s.Where(x => x.Sale >= 11 && x.Sale <= 14).ToList();
+                                break;
+                            }
+                        case "15% и более":
+                            {
+                                s = s.Where(x => x.Sale > 15).ToList();
                                 break;
                             }
                     }
                 }
             }
+            //if (cmbSorted != null)
+            //{
+            //    if (cmbSorted.SelectedValue != null)
+            //    {
+            //        ComboBoxItem cmb = (ComboBoxItem)cmbSorted.SelectedItem;
+            //        switch (cmb.Content)
+            //        {
+            //            case "По возрастанию":
+            //                {
+            //                    order = order.OrderBy(x => x.Summa).ToList();
+            //                    break;
+            //                }
+            //            case "По убыванию":
+            //                {
+            //                    order = order.OrderByDescending(x => x.Summa).ToList();
+
+            //                    break;
+            //                }
+            //        }
+            //    }
+            //}
 
 
-            lvOrderEdited.ItemsSource = order;
+            lvOrderEdited.ItemsSource = s;
 
         }
         private void cmbSorted_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -252,6 +316,9 @@ namespace WriteReadProjectDemo
 
         private void btnOutFiltres_Click(object sender, RoutedEventArgs e)
         {
+            List<SummClass> order = new List<SummClass>();
+
+            cmbSorted.SelectedValue = order;
 
         }
 

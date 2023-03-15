@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WriteReadProjectDemo"
       mc:Ignorable="d" 
-      Background="White"
+     Background="#76e383"
       
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PadeOrder">
@@ -18,7 +18,9 @@
             <RowDefinition Height="5*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center">
+            <TextBlock Text="Корзина" Style="{StaticResource tbStyleFont}" FontSize="36" ></TextBlock>
+        </StackPanel>
         <StackPanel Grid.Row="1">
             <ListView  Name="lvOrder" ScrollViewer.VerticalScrollBarVisibility="Disabled" Height="230" Width="800">
                 <ListView.ItemTemplate>
@@ -63,8 +65,11 @@
                 </ListView.ItemTemplate>
             </ListView>
             <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                <ComboBox Name="cmbOrderPoint"></ComboBox>
-                <Button Content="Сформировать заказ" Name="btnFormOrder" Click="btnFormOrder_Click"/>
+                <GroupBox  Header="Выберите пункт выдачи (ПВЗ)">
+                    <ComboBox Name="cmbOrderPoint"></ComboBox>
+                </GroupBox>
+
+                <Button  FontFamily="Comic Sans MS"   Background="#498c51" Margin="15 0 0 0"  Content="Сформировать заказ" Name="btnFormOrder" Click="btnFormOrder_Click"/>
             </StackPanel>
          
         </StackPanel>

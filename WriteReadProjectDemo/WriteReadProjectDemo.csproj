@@ -90,6 +90,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\SaleClass.cs" />
     <Compile Include="Windows\AddProductAdmin.xaml.cs">
       <DependentUpon>AddProductAdmin.xaml</DependentUpon>
     </Compile>

@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WriteReadProjectDemo"
         mc:Ignorable="d"
-        Title="AddProductAdmin" Height="580" Width="500">
+        Background="#76e383"
+             ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="Добавление товаров" Height="580" Width="500">
     <Grid >
         <Grid.RowDefinitions>
           
@@ -46,7 +49,7 @@
             <GroupBox FontFamily="Comic Sans MS" Header="Укажите поставщика">
                 <ComboBox FontFamily="Comic Sans MS" Name="cmbSupplier"></ComboBox>
             </GroupBox>
-            <Button FontFamily="Comic Sans MS" Height="50" Content="Добавить" Name="addProduct" Click="addProduct_Click" Loaded="addProduct_Loaded"   ></Button>
+            <Button Background="#498c51" FontFamily="Comic Sans MS" Height="50" Content="Добавить" Name="addProduct" Click="addProduct_Click" Loaded="addProduct_Loaded"   ></Button>
         </StackPanel>
     </Grid>
    

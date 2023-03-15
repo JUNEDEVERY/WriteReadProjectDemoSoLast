@@ -4,8 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WriteReadProjectDemo"
+          Background="#76e383"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+             ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="Формирование заказа" Height="450" Width="800">
     <Window.Resources>
       
             <BitmapImage x:Key="noPhoto" UriSource="\resources\picture.png"></BitmapImage>
@@ -22,7 +25,7 @@
             </Grid.RowDefinitions>
            
             <StackPanel Grid.Row="1">
-                <ListView  Name="lvOrder" ScrollViewer.VerticalScrollBarVisibility="Disabled" Height="230" Width="800">
+                <ListView  Name="lvOrder" ScrollViewer.VerticalScrollBarVisibility="Disabled" Height="230" Width="800"  Background="#76e383">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Grid  Background="{Binding colorBrush}" Width="770" >
@@ -48,7 +51,7 @@
                                     </StackPanel>
                                 </StackPanel>
                                 <StackPanel Grid.Column="2">
-                                    <Button Content="Удалить из заказа" Name="btnDelete" Click="btnDelete_Click" Uid="{Binding ProductArticleNumber}"/>
+                                    <Button  Background="#498c51" Content="Удалить из заказа" Name="btnDelete" Click="btnDelete_Click" Uid="{Binding ProductArticleNumber}"/>
                                     <GroupBox Header="Количество товара">
                                         <TextBox Text="1" TextChanged="TextBox_TextChanged" Uid="{Binding ProductArticleNumber}">
                                             <TextBox.ToolTip>Введите количество товара</TextBox.ToolTip>
@@ -62,7 +65,7 @@
                 </ListView>
                 <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
                     <ComboBox Name="cmbOrderPoint"></ComboBox>
-                    <Button Content="Сформировать заказ" Name="btnFormOrder" Click="btnFormOrder_Click"/>
+                    <Button Margin="15 0 0 0" Background="#498c51" Content="Сформировать заказ" Name="btnFormOrder" Click="btnFormOrder_Click"/>
                     <TextBlock Name="tbSummaZakaza"  FontWeight="Bold"></TextBlock>
                     <TextBlock Name="tbSaleZakaza" Margin="15 0 0 0"></TextBlock>
                 </StackPanel>

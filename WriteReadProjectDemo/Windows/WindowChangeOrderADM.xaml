@@ -5,6 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WriteReadProjectDemo"
         mc:Ignorable="d"
+           Background="#76e383"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
         Title="WindowChangeOrderADM" Height="250" Width="450">
     <Grid>
         <StackPanel>
@@ -18,8 +21,12 @@
 
                 </DatePicker>
             </GroupBox>
-            <Button Content="Сохранить" Name="btnChange" Click="btnChange_Click"></Button>
-            <Button Content="Выйти" Name="btnBack" Click="btnBack_Click"></Button>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+              
+                <Button Background="#498c51" Content="Выйти" Name="btnBack" Click="btnBack_Click"></Button>
+                <Button Margin="15 0 0 0" Background="#498c51" Content="Сохранить" Name="btnChange" Click="btnChange_Click"></Button>
+            </StackPanel>
+            
         </StackPanel>
         
     </Grid>

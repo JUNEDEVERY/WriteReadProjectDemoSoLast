@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WriteReadProjectDemo"
         mc:Ignorable="d"
-        Title="WindowChangeOrder" Height="450" Width="450">
+           Background="#76e383"
+             ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="Изменение заказа" Height="450" Width="450">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
@@ -32,7 +35,7 @@
             <GroupBox Header="Изменить код получения">
                 <TextBox Name="tbCode" MaxLength="3"></TextBox>
             </GroupBox>
-            <Button HorizontalAlignment="Center" Name="changeOrder" Content="Изменить" Click="changeOrder_Click"></Button>
+            <Button Background="#498c51"  HorizontalAlignment="Center" Name="changeOrder" Content="Изменить" Click="changeOrder_Click"></Button>
         </StackPanel> 
     </Grid>
 </Window>

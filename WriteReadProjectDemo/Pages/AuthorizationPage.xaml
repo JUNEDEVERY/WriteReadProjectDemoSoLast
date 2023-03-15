@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WriteReadProjectDemo"
       mc:Ignorable="d" 
-      Background="White"
+      Background="#76e383"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AuthorizationPage">
 
@@ -17,23 +17,23 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" HorizontalAlignment="Center">
-                <TextBlock  Margin="0 15 0 0" Style="{StaticResource tbStyleFont}" Text="Авторизация"></TextBlock>
+            <TextBlock FontFamily="Comic Sans MS"  Margin="0 15 0 0" Style="{StaticResource tbStyleFont}" Text="Авторизация" FontSize="25"></TextBlock>
             </StackPanel>
 
 
             <StackPanel Grid.Row="1" HorizontalAlignment="Center" >
-                <GroupBox Name="gpLogin" Margin="0 35 0 0" Header="Введите логин">
-                <TextBox MaxLength="15" Name="tbLogin" Text="loginDEpxl2018"/>
+            <GroupBox FontFamily="Comic Sans MS"  Name="gpLogin" Margin="0 35 0 0" Header="Введите логин">
+                <TextBox FontFamily="Comic Sans MS"  MaxLength="15" Name="tbLogin" Text="loginDEpxl2018"/>
                 </GroupBox>
-            <GroupBox Name="gpPassword" Margin="0 35 0 0" Header="Введите пароль">
-                <TextBox MaxLength="15" Name="tbPassword" Text="P6h4Jq"/>
+            <GroupBox FontFamily="Comic Sans MS"  Name="gpPassword" Margin="0 35 0 0" Header="Введите пароль">
+                <TextBox FontFamily="Comic Sans MS" MaxLength="15" Name="tbPassword" Text="P6h4Jq"/>
                 </GroupBox>
-            <TextBlock Name="tbAuth" ></TextBlock>
+            <TextBlock FontFamily="Comic Sans MS"  Name="tbAuth" ></TextBlock>
             </StackPanel>
 
             <StackPanel Grid.Row="2" Orientation="Horizontal"  HorizontalAlignment="Center">
-            <Button Click="btnAuth_Click" Name="btnAuth" Content="Авторизоваться" Loaded="btnAuth_Loaded"/> 
-            <Button Margin="15 0 0 0" Name="goGuest" Content="Войти как гость" Click="goGuest_Click"  Loaded="btnAuth_Loaded"/>
+            <Button FontFamily="Comic Sans MS"  Click="btnAuth_Click" Name="btnAuth" Content="Авторизоваться" Loaded="btnAuth_Loaded" Height="25"/>
+            <Button FontFamily="Comic Sans MS"  Margin="15 0 0 0" Name="goGuest" Content="Войти как гость" Click="goGuest_Click"  Loaded="btnAuth_Loaded" Height="25"/>
 
             </StackPanel>
     
